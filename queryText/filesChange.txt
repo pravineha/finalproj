@@ -1,0 +1,4 @@
+product-list.component.ts
+product-list.component.html
+select-category.component.html
+product-list.items.html

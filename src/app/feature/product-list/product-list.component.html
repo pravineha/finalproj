@@ -1,0 +1,55 @@
+<app-auth-navbar></app-auth-navbar>
+<main class="profile-page">
+
+    <app-select-category   [categoryList]="categoryList" [sectionList]="sectionList"
+     (sectionChange)="onChangeSelection($event)" (categoryChange)="onChangeCategory($event)"></app-select-category>
+  
+  <section *ngIf="categoryList.length > 0"  class="relative py-16 bg-gray-300">
+    <div class="container mx-auto px-4">
+      <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
+        <div class="px-6">
+          <div class="flex flex-wrap justify-center">
+            <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
+              <div *ngIf="bussinessDetails" class="relative">
+                <img
+                  [alt]="bussinessDetails.name"
+                  [src]="bussinessDetails.img"
+                  class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-20">
+            <h3
+              class="text-4xl font-semibold leading-normal mb-2 text-gray-800 mb-2"
+            >
+              {{bussinessDetails.name}}
+            </h3>
+            <div
+              class="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase"
+            >
+              <i class="fas fa-map-marker-alt mr-2 text-lg text-gray-500"></i>
+              {{bussinessDetails.location}}
+            </div>
+            <div class="mb-2 text-gray-700 mt-1">
+              <i class="fas fa-briefcase mr-2 text-lg text-gray-500"></i>
+              {{bussinessDetails.city}}
+            </div>
+            <div *ngFor="let product of productList">
+              <app-product-list-items [product]="product"></app-product-list-items>
+            </div>
+            <div class="w-100 text-center" *ngIf="productList.length == 0"> 
+                  <h3 *ngIf="sectionList.length > 0 && catSectionId">Try diffrent category</h3>
+                  <h3 *ngIf="sectionList.length > 0 && !catSectionId">Select section</h3>
+                  <h3 *ngIf="sectionList.length == 0  ">Select category</h3>
+            </div>
+          </div>
+          
+        </div>
+
+        
+      </div>
+    </div>
+  </section>
+</main>
+<app-footer></app-footer>

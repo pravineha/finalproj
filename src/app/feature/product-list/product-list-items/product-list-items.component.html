@@ -1,0 +1,80 @@
+<div class="section section-item">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="item active"><img alt="First slide"
+                    [src]="product.img"
+                    class="d-block"></div>
+               
+            </div>
+            
+            <div class="col-lg-6 col-md-12 mx-auto">
+                <h2 class="title">{{product.name}}</h2>
+                <div class="stats">
+                    <div class="stars text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        <p class="d-inline">(76 customer reviews)</p>
+                    </div>
+                </div><br>
+                <h2 class="main-price">$3,390</h2>
+                <h6 class="category">Description</h6>
+                <p class="description"> Eres' daring 'Grigri Fortune' swimsuit has the fit and coverage of a
+                    shirt
+                    in a one-piece silhouette. This fuchsia style is crafted from the label's sculpting peau
+                    douce
+                    fabric and has flattering cutouts through the torso and back. Wear yours with mirrored
+                    sunglasses on vacation. </p><br>
+                <div class="row pick-size">
+                    <div class="col-lg-4 col-md-4"><label> Quantity </label>
+                        <div class="input-group">
+                            <div class="input-group-btn"><button id="down"
+                                    class="btn btn-outline-warning btn-round"><i
+                                        class="ni ni-fat-delete"></i></button></div><input id="myNumber"
+                                type="text" value="1" class="form-control input-number">
+                            <div class="input-group-btn"><button id="up"
+                                    class="btn btn-outline-warning btn-round"><i
+                                        class="ni ni-fat-add"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-4 col-sm-6"><label> Select color </label>
+                        <select name="color" id="color">
+                            <option value="volvo">Black</option>
+                            <option value="saab">Red</option>
+                            <option value="mercedes">Blue</option>
+                            <option value="audi">Orange</option>
+                        </select>
+                    </div> -->
+                    <div class="col-lg-4 col-md-4 col-sm-6"><label> Select size </label>
+                        <br>
+                        <select (change)="measureChanged($event.target.value)" name="size" id="size">
+                            <!-- <option  selected disabled>Select measures</option> -->
+                            <option *ngFor="let measures of measureMentList ;let i= index"
+                             [value]="i">
+                                {{measures[0].name}}
+                            </option>
+                            <!-- <option value="volvo">XL</option>
+                            <option value="saab">L</option>
+                            <option value="mercedes">S</option>
+                            <option value="audi">M</option> -->
+                        </select>
+                    </div>
+                
+                    <div class="container">
+                        <div class="row">
+                            <div *ngFor="let measurements of measureMentList[selectedMeasureIndex]" class="col-sm mt-2">
+                                <label class="text-capitalize">{{measurements.sizename}}</label>
+                                <input type="text" placeholder="Collor" class="form-control" aria-describedby="basic-addon3"
+                                 [value]="measurements.size">
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div><br>
+                <div class="row justify-content-start">
+                    <button class="btn btn-warning ml-3" [routerLink]="['/cartPage']"> Add to Cart <i
+                            class="ni ni-cart"></i></button></div>
+            </div>
+        </div>
+    </div>
+</div>

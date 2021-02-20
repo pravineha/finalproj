@@ -1,0 +1,355 @@
+<!-- <app-auth-navbar></app-auth-navbar> -->
+<app-auth-navbar></app-auth-navbar>
+<main class="profile-page">
+  <section class="relative block h-500-px">
+    <div
+      class="absolute top-0 w-full h-full bg-center bg-cover"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2710&q=80');
+      "
+    >
+      <span
+        id="blackOverlay"
+        class="w-full h-full absolute opacity-50 bg-black"
+      ></span>
+    </div>
+    <div
+      class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px"
+      style="transform: translateZ(0);"
+    >
+      <svg
+        class="absolute bottom-0 overflow-hidden"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        version="1.1"
+        viewBox="0 0 2560 100"
+        x="0"
+        y="0"
+      >
+        <polygon
+          class="text-gray-300 fill-current"
+          points="2560 0 2560 100 0 100"
+        ></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class="relative py-16 bg-gray-300">
+    <div class="container mx-auto px-4">
+       
+      <div
+        class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64"
+      >
+      <div class="container">
+        <h1>Cart products</h1>
+        <div class="row mt-3">
+            <div class="col-lg-6 col-md-12">
+                <carousel>
+                    <div tabindex="0" class="carousel slide">
+                        <ol class="carousel-indicators">
+                            <li class="active"></li>
+                            <li class=""></li>
+                            <li class=""></li>
+                        </ol>
+                        <div class="carousel-inner" style="display: block;">
+                            <slide aria-hidden="false" class="item carousel-item active"
+                                style="width: 100%; order: 0;">
+                                <div class="item active"><img alt="First slide"
+                                        src="https://demos.creative-tim.com/argon-design-system-pro-angular/assets/img/pages/shirt.png"
+                                        class="d-block"></div>
+                            </slide>
+                            <slide aria-hidden="true" class="item carousel-item" style="width: 100%; order: 0;">
+                                <div class="item"><img alt="Second slide"
+                                        src="https://demos.creative-tim.com/argon-design-system-pro-angular/assets/img/pages/shorts.png"
+                                        class="d-block"></div>
+                            </slide>
+                            <slide aria-hidden="true" class="item carousel-item" style="width: 100%; order: 0;">
+                                <div class="item"><img alt="Third slide"
+                                        src="https://demos.creative-tim.com/argon-design-system-pro-angular/assets/img/pages/tshirt.png"
+                                        class="d-block"></div>
+                            </slide>
+                        </div><a tabindex="0" role="button"
+                            class="left carousel-control carousel-control-prev"><span aria-hidden="true"
+                                class="icon-prev carousel-control-prev-icon"></span><span
+                                class="sr-only">Previous</span>
+                            <!---->
+                        </a>
+                        <!----><a tabindex="0" role="button"
+                            class="right carousel-control carousel-control-next"><span aria-hidden="true"
+                                class="icon-next carousel-control-next-icon"></span><span
+                                class="sr-only">Next</span></a>
+                        <!---->
+                    </div>
+                </carousel>
+            </div>
+            <div class="col-lg-6 col-md-12 mx-auto">
+                <h2 class="title">School Shirt</h2>
+                <div class="stats">
+                    <div class="stars text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        <p class="d-inline">(76 customer reviews)</p>
+                    </div>
+                </div><br>
+                <h2 class="main-price">$3,390</h2>
+                
+                <div class="row pick-size">
+                    <div class="col-lg-4 col-md-4"><label> Quantity </label>
+                        <div class="input-group">
+                            <div class="input-group-btn"><button id="down"
+                                    class="btn btn-outline-warning btn-round"><i
+                                        class="ni ni-fat-delete"></i></button></div><input id="myNumber"
+                                type="text" value="1" class="form-control input-number">
+                            <div class="input-group-btn"><button id="up"
+                                    class="btn btn-outline-warning btn-round"><i
+                                        class="ni ni-fat-add"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6"><label> Select color </label>
+                        <select name="color" id="color">
+                            <option value="volvo">Black</option>
+                            <option value="saab">Red</option>
+                            <option value="mercedes">Blue</option>
+                            <option value="audi">Orange</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6"><label> Select size </label>
+                        <br>
+                        <select name="size" id="size">
+                            <option value="volvo">XL</option>
+                            <option value="saab">L</option>
+                            <option value="mercedes">S</option>
+                            <option value="audi">M</option>
+                        </select>
+                    </div>
+                    <label for="basic-url" class="form-label">Your vanity URL</label>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm mt-2">
+                                <label>Collor</label>
+                                <input type="text" placeholder="Collor" class="form-control" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="col-sm mt-2">
+                                <label>Shoulder</label>
+                                <input type="text" placeholder="Shoulder" class="form-control" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="col-sm mt-2">
+                                <label>Waist</label>
+                                <input type="text"  placeholder="Waist" class="form-control" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col-sm mt-2">
+                                <label>Chest</label>
+                                <input type="text" placeholder="Chest"  class="form-control" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="col-sm mt-2">
+                                <label>Sleev length</label>
+                                <input type="text" placeholder="Sleev length" class="form-control" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="col-sm mt-2">
+                                <label>Sleve full</label>
+                                <input type="text" placeholder="Sleev full"  class="form-control" aria-describedby="basic-addon3">
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div><br>
+                <div>
+                    <h6>Customer details</h6> 
+                    <div class="row">
+                        <div class="col-sm mt-2">
+                            <label>School Name</label>
+                            <br/>
+                             <a>Suguna PIPS</a>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm mt-2">
+                            <label>Students Name</label>
+                            <input type="text" placeholder="Employee Name" class="form-control" aria-describedby="basic-addon3">
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm mt-2">
+                            <label>Student Id</label>
+                            <input type="text" placeholder="Employee Id" class="form-control" aria-describedby="basic-addon3">
+                        </div>
+                        <div class="col-sm mt-2">
+                            <label>Class</label>
+                            <br/>
+                            <select name="size" id="size">
+                                <option value="volvo">I</option>
+                                <option value="saab">II</option>
+                                <option value="mercedes">III</option>
+                                <option value="audi">IV</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-sm mt-2">
+                            <label>Division</label>
+                            <br/>
+                            <select name="size" id="size">
+                                <option value="volvo">A</option>
+                                <option value="saab">B</option>
+                                <option value="mercedes">C</option>
+                                <option value="audi">D</option>
+                            </select>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="row mt-3">
+        <div class="col-lg-6 col-md-12">
+            <carousel>
+                <div tabindex="0" class="carousel slide">
+                    <ol class="carousel-indicators">
+                        <li class="active"></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                    </ol>
+                    <div class="carousel-inner" style="display: block;">
+                        <slide aria-hidden="false" class="item carousel-item active"
+                            style="width: 100%; order: 0;">
+                            <div class="item active"><img alt="First slide"
+                                    src="https://demos.creative-tim.com/argon-design-system-pro-angular/assets/img/pages/shirt.png"
+                                    class="d-block"></div>
+                        </slide>
+                        <slide aria-hidden="true" class="item carousel-item" style="width: 100%; order: 0;">
+                            <div class="item"><img alt="Second slide"
+                                    src="https://demos.creative-tim.com/argon-design-system-pro-angular/assets/img/pages/shorts.png"
+                                    class="d-block"></div>
+                        </slide>
+                        <slide aria-hidden="true" class="item carousel-item" style="width: 100%; order: 0;">
+                            <div class="item"><img alt="Third slide"
+                                    src="https://demos.creative-tim.com/argon-design-system-pro-angular/assets/img/pages/tshirt.png"
+                                    class="d-block"></div>
+                        </slide>
+                    </div><a tabindex="0" role="button"
+                        class="left carousel-control carousel-control-prev"><span aria-hidden="true"
+                            class="icon-prev carousel-control-prev-icon"></span><span
+                            class="sr-only">Previous</span>
+                        <!---->
+                    </a>
+                    <!----><a tabindex="0" role="button"
+                        class="right carousel-control carousel-control-next"><span aria-hidden="true"
+                            class="icon-next carousel-control-next-icon"></span><span
+                            class="sr-only">Next</span></a>
+                    <!---->
+                </div>
+            </carousel>
+        </div>
+        <div class="col-lg-6 col-md-12 mx-auto">
+            <h2 class="title">Company shirt</h2>
+            <div class="stats">
+                <div class="stars text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    <p class="d-inline">(76 customer reviews)</p>
+                </div>
+            </div><br>
+            <h2 class="main-price">$3,390</h2>
+            
+            <div class="row pick-size">
+                <div class="col-lg-4 col-md-4"><label> Quantity </label>
+                    <div class="input-group">
+                        <div class="input-group-btn"><button id="down"
+                                class="btn btn-outline-warning btn-round"><i
+                                    class="ni ni-fat-delete"></i></button></div><input id="myNumber"
+                            type="text" value="1" class="form-control input-number">
+                        <div class="input-group-btn"><button id="up"
+                                class="btn btn-outline-warning btn-round"><i
+                                    class="ni ni-fat-add"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6"><label> Select color </label>
+                    <select name="color" id="color">
+                        <option value="volvo">Black</option>
+                        <option value="saab">Red</option>
+                        <option value="mercedes">Blue</option>
+                        <option value="audi">Orange</option>
+                    </select>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6"><label> Select size </label>
+                    <br>
+                    <select name="size" id="size">
+                        <option value="volvo">XL</option>
+                        <option value="saab">L</option>
+                        <option value="mercedes">S</option>
+                        <option value="audi">M</option>
+                    </select>
+                </div>
+                <label for="basic-url" class="form-label">Your vanity URL</label>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm mt-2">
+                            <label>Collor</label>
+                            <input type="text" placeholder="Collor" class="form-control" aria-describedby="basic-addon3">
+                        </div>
+                        <div class="col-sm mt-2">
+                            <label>Shoulder</label>
+                            <input type="text" placeholder="Shoulder" class="form-control" aria-describedby="basic-addon3">
+                        </div>
+                        <div class="col-sm mt-2">
+                            <label>Waist</label>
+                            <input type="text"  placeholder="Waist" class="form-control" aria-describedby="basic-addon3">
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm mt-2">
+                            <label>Chest</label>
+                            <input type="text" placeholder="Chest"  class="form-control" aria-describedby="basic-addon3">
+                        </div>
+                        <div class="col-sm mt-2">
+                            <label>Sleev length</label>
+                            <input type="text" placeholder="Sleev length" class="form-control" aria-describedby="basic-addon3">
+                        </div>
+                        <div class="col-sm mt-2">
+                            <label>Sleve full</label>
+                            <input type="text" placeholder="Sleev full"  class="form-control" aria-describedby="basic-addon3">
+                        </div>
+                    </div>
+                   
+                </div>
+            </div><br>
+            <div>
+                <h6>Customer details</h6> 
+                <div class="row">
+                    <div class="col-sm mt-2">
+                        <label>Corprate Name</label>
+                        <br/>
+                        <a>TATA Consultancy Service</a>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-sm mt-2">
+                        <label>Employee Name</label>
+                        <input type="text" placeholder="Employee Name" class="form-control" aria-describedby="basic-addon3">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-sm mt-2">
+                        <label>Employee Id</label>
+                        <input type="text" placeholder="Employee Id" class="form-control" aria-describedby="basic-addon3">
+                    </div>
+                    <div class="col-sm mt-2">
+                        <label>Department</label>
+                        <input type="text" placeholder="Department"  class="form-control" aria-describedby="basic-addon3">
+                    </div>
+                    
+                    <div class="col-sm mt-2">
+                        <label>Division</label>
+                        <input type="text" placeholder="Division" class="form-control" aria-describedby="basic-addon3">
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="row justify-content-center mb-3"><button class="btn btn-warning ml-3 mt-4"> Checkout <i
+    class="ni ni-cart"></i></button></div>
+</div>
+      </div>
+    </div>
+  </section>
+</main>
+<app-footer></app-footer>
+
+
+
+        
+       

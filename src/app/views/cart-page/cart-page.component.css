@@ -1,0 +1,29 @@
+@media (min-width: 1200px){
+    .container {
+        max-width: 1040px;
+    }
+}
+.h1, h1 {
+    padding: 10px;
+    margin: 10px;
+    font-size: 2rem;
+}
+.h-500-px{
+    height: 300px;
+}
+.product-page .page-header.skew-separator:after{
+    background: #fff!important;
+}
+hr{
+    margin-top: 30px;
+    width: 100%;
+    border-top: 1px solid;
+}
+.input-group-btn button{
+    padding: 10px;
+    border-radius: 0px;
+}
+
+.input-number{
+    text-align: center;
+}

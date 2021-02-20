@@ -1,0 +1,20 @@
+.clientDiv{
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        border-radius: 10px;
+}
+.clientContainer{
+        padding:10px;
+}
+.clientDiv:hover{
+    -webkit-box-shadow: inset 4px 1px 15px -8px #fc8181;
+        box-shadow: 5px 3px 15px -8px #fc8181;
+}
+.clientDiv .card-img-top{
+        width: 60%;
+}
+.clientDiv .card-body h5, .clientDiv .card-body p{
+        font-weight: bold;
+}

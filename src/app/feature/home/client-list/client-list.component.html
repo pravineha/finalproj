@@ -1,0 +1,32 @@
+<div class="p-5">
+    <h3>{{industryName}}</h3>
+    <div *ngIf="bussinessListFetch == 0">
+        Loading
+    </div>
+    <div *ngIf="bussinessListFetch == 1">
+        <div *ngIf="bussinessList.length == 0">
+            No data found for this {{industryName}} type
+        </div>
+        <div class="d-flex clientContainer">
+            <!-- <div class="clientDiv" (click)="navToProductList(bussiness.id)" *ngFor="let bussiness of bussinessList">
+                {{bussiness.name}}
+            </div> -->
+            <div  (click)="navToProductList(bussiness.id)"  *ngFor="let bussiness of bussinessList" class="card clientDiv " style="width: 18rem;">
+                <img class="card-img-top" [src]="bussiness.img" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{bussiness.name}}</h5>
+                  <p class="card-text">{{bussiness.location}}</p>
+                  <p class="card-text">{{bussiness.city}}</p>
+                  <p class="card-text">{{bussiness.phoneNumber}}</p>
+                  <a  class="btn btn-primary">Select</a>
+                </div>
+              </div>
+        </div>
+        
+    </div>
+    <div *ngIf="bussinessListFetch == -1">
+    
+    </div>
+
+</div>
+

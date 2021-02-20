@@ -1,0 +1,148 @@
+******************************Request**********************************
+
+{
+  getDie(number:6){
+    numSides,
+    rollOnce,
+    roll(numRolls:4)
+  },
+  books{
+    id,
+    name,
+    pages
+  }
+}
+
+{
+  "data": {
+    "getDie": {
+      "numSides": 6,
+      "rollOnce": 1,
+      "roll": [
+        5,
+        2,
+        6,
+        5
+      ]
+    },
+    "books": [
+      {
+        "id": "1",
+        "name": "Book 1",
+        "pages": 432
+      },
+      {
+        "id": "2",
+        "name": "Book 2",
+        "pages": 32
+      },
+      {
+        "id": "3",
+        "name": "Book 3",
+        "pages": 532
+      }
+    ]
+  }
+}
+
+////////////get all industries////////////
+{
+  industries{
+    name,
+    createdDate,
+    id
+  }
+}
+/////////// get all industries////////////
+
+/////////// get bussiness by ID //////////
+
+{
+  getBussinessesById(industryId:"601edf10e558860c7063d8ab"){
+    name,
+    id,
+    createdDate,
+    industryId,
+    categoryList{
+      name,
+      id,
+      sectionList{
+        id,
+        name
+        productList{
+          name,
+          id,
+          measurements{
+            name,
+            size,
+            sizename
+          }
+        }
+      }
+    }
+}
+
+}
+
+/////////// get bussiness by ID //////////
+
+******************************Response**********************************
+
+
+***************************Mutation**************************************
+mutation{
+  addIndustry(name:"Schools"){
+    name,
+    createdDate
+  }
+}
+
+mutation{
+  addBussiness(name:"PSG Schools",industryId:"601edf10e558860c7063d8ab"){
+    name,
+    createdDate,
+    industryId
+  }
+}
+
+mutation{
+  addCategory(name:"Boys",bussinessId:"601ef04168f7fd1a30371423"){
+    id,
+    name,
+    createdDate,
+    bussinessId,    
+  }
+}
+
+mutation{
+  addSection(name:"KF1-5",categoryId:"601ef972a5efe51cbca1034b") {
+    id,
+    name,
+    createdDate,
+    categoryId
+  }
+}
+
+mutation{
+  addProduct(name:"shirt",sectionId:"601f054f26b0651268dba77b",measurements:[{name:"XL",sizename:"shoulder",size:"40"},{name:"XXL",sizename:"shoulder",size:"50"}]){
+    id,
+    name,
+    measurements
+  }
+}
+
+mutation{
+  addProduct(name:"shirt",sectionId:"601f054f26b0651268dba77b",
+    measurements:[{name:"XL",sizename:"hip",size:"34"}]){
+    id,
+    name,
+    sectionId,
+    measurements{
+    	name,
+      sizename,
+      size
+  }
+  }
+}
+
+***************************Mutation************************************

@@ -1,0 +1,51 @@
+<div class="input-group mb-3 industry-search">
+    <div *ngIf="categoryList.length > 0" class="d-flex form-group">
+        <select (change)="onChangeCategory($event.target.value)" class="form-control m-2"  id="Select category">
+          <option  value="" disabled selected>Select Category</option>
+          <option *ngFor="let cat of categoryList" [value]="cat.id">{{cat.name}}</option>
+          <!-- <option>Apollo hospital</option>
+          <option>CMC Vellore hospital</option>
+          <option>KG coimbatore</option>
+          <option>Ganga coimbatore</option> -->
+        </select>
+        <select (change)="onChangeSection($event.target.value)" class="form-control m-2" id="Select section">
+          <option value="" disabled selected>Select Section</option>
+          <option *ngFor="let sec of sectionList" [value]="sec.id">{{sec.name}}</option>
+        </select>
+    </div> 
+    <div  *ngIf="categoryList.length == 0" class="w-100 text-center">
+      <h2 class="p-3 ">No data found for this client!!!</h2>
+    </div>
+</div>
+<section class="relative block h-500-px">
+<div
+  class="absolute top-0 w-full h-full bg-center bg-cover"
+  style="
+    background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2710&q=80');
+  "
+>
+  <span
+    id="blackOverlay"
+    class="w-full h-full absolute opacity-50 bg-black"
+  ></span>
+</div>
+<div
+  class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px"
+  style="transform: translateZ(0);"
+>
+  <svg
+    class="absolute bottom-0 overflow-hidden"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="none"
+    version="1.1"
+    viewBox="0 0 2560 100"
+    x="0"
+    y="0"
+  >
+    <polygon
+      class="text-gray-300 fill-current"
+      points="2560 0 2560 100 0 100"
+    ></polygon>
+  </svg>
+</div>
+</section>
