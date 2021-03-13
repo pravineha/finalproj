@@ -106,12 +106,13 @@ const token = localStorage.getItem("token");
   providers: [ {
     provide: APOLLO_OPTIONS,
     useFactory: (httpLink: HttpLink) => {
+      const authToken = localStorage.getItem("authToken") || "";
       return {
         cache: new InMemoryCache(),
         link: httpLink.create({
-          uri: 'http://localhost:3000/general/',
+          uri: 'http://localhost:3000/general',
           headers: new HttpHeaders({
-            "Authorization":localStorage.getItem("authToken")
+            "Authorization":authToken
           })
         }),
       };
@@ -120,7 +121,7 @@ const token = localStorage.getItem("token");
   },{
     provide: APOLLO_NAMED_OPTIONS,
     useFactory:(httpLink: HttpLink) :NamedOptions=>{
-      const authToken = localStorage.getItem("authToken");
+      const authToken = localStorage.getItem("authToken") || "";
      // alert("GRAPHQL")
       return{
         loggedInUser:{
@@ -131,7 +132,7 @@ const token = localStorage.getItem("token");
             }
           },
           link: httpLink.create({
-            uri: 'http://localhost:3000/generalUser/',
+            uri: 'http://localhost:3000/generalUser',
             headers: new HttpHeaders({
               "Authorization": authToken
             })
