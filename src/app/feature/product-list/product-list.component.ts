@@ -77,6 +77,7 @@ export class ProductListComponent implements OnInit {
     const query = `
     {
       getProductBySectionId(sectionid:"${catSectionId}"){
+         id,
           name,
           createdDate,
           sectionId,

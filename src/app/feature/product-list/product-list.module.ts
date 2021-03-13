@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {FormsModule} from "@angular/forms";
 import { CommonModule } from '@angular/common';
 import {SharedModule} from "../../shared.module";
 import { ProductListRoutingModule } from './product-list-routing.module';
@@ -11,6 +12,7 @@ import { ProductListItemsComponent } from './product-list-items/product-list-ite
   declarations: [ProductListComponent, SelectCategoryComponent, ProductListItemsComponent],
   imports: [
     CommonModule,
+    FormsModule,
     ProductListRoutingModule,
     SharedModule
   ]

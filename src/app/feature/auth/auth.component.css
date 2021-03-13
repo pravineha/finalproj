@@ -1,0 +1,10 @@
+@media(min-width:1200px){
+    .container{
+        max-width: 100% !important;
+        
+    }
+}
+.error-block{
+    color:red;
+    font-size: 12px;
+}

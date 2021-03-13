@@ -52,12 +52,14 @@ import { CartPageComponent } from './views/cart-page/cart-page.component';
 import { ProductListComponent } from './views/product-list/product-list.component';
 import { ProductDetailComponent } from './feature/product-detail/product-detail.component';
 import {HttpClientModule} from '@angular/common/http';
-import {APOLLO_OPTIONS} from 'apollo-angular';
+import {APOLLO_OPTIONS,APOLLO_NAMED_OPTIONS, NamedOptions} from 'apollo-angular';
 import {HttpLink} from 'apollo-angular/http';
 import {InMemoryCache} from '@apollo/client/core';
 import { GraphQLModule } from './graphql.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpHeaders } from '@angular/common/http';
 
+const token = localStorage.getItem("token");
 
 @NgModule({
   declarations: [
@@ -100,19 +102,46 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ProductListComponent,
     ProductDetailComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, GraphQLModule, HttpClientModule, NgbModule],
+  imports: [BrowserModule, AppRoutingModule,  HttpClientModule, NgbModule],
   providers: [ {
     provide: APOLLO_OPTIONS,
     useFactory: (httpLink: HttpLink) => {
       return {
         cache: new InMemoryCache(),
         link: httpLink.create({
-          uri: 'http://localhost:3000/graphql/',
+          uri: 'http://localhost:3000/general/',
+          headers: new HttpHeaders({
+            "Authorization":localStorage.getItem("authToken")
+          })
         }),
       };
     },
     deps: [HttpLink],
-  },],
+  },{
+    provide: APOLLO_NAMED_OPTIONS,
+    useFactory:(httpLink: HttpLink) :NamedOptions=>{
+      const authToken = localStorage.getItem("authToken");
+     // alert("GRAPHQL")
+      return{
+        loggedInUser:{
+          cache: new InMemoryCache(),
+          defaultOptions:{
+            watchQuery:{
+              errorPolicy:"all"
+            }
+          },
+          link: httpLink.create({
+            uri: 'http://localhost:3000/generalUser/',
+            headers: new HttpHeaders({
+              "Authorization": authToken
+            })
+  
+          }),
+        }
+        
+      }
+    }, deps: [HttpLink]
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

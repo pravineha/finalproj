@@ -5,12 +5,19 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
 import { RegisterComponent } from './register/register.component';
 import { Routes, RouterModule } from "@angular/router";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {SharedModule} from "../../shared.module";
+import {AuthService} from "./auth.service";
+
 
 @NgModule({
   declarations: [AuthComponent, RegisterComponent],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SharedModule
   ],
   exports:[RouterModule]
   
