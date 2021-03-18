@@ -19,10 +19,17 @@ export class AuthComponent implements OnInit {
   constructor(private auth:AuthService,private router:Router) { }
 
   ngOnInit(): void {
-    this.SigninForm = new FormGroup({
-      'email' : new FormControl("",[Validators.required]),
-      'password': new FormControl("",[Validators.required,Validators.minLength(6),Validators.maxLength(12)])
-    })
+    const token = localStorage.getItem("authToken");
+    if(token){
+      this.router.navigate(['/cart']);
+      
+    }else{
+      this.SigninForm = new FormGroup({
+        'email' : new FormControl("",[Validators.required]),
+        'password': new FormControl("",[Validators.required,Validators.minLength(6),Validators.maxLength(12)])
+      })
+    }
+    
   }
 
   onSubmit(){
@@ -37,7 +44,8 @@ export class AuthComponent implements OnInit {
       const authtoken = _resp.token;
       if(isAuth){
        localStorage.setItem("authToken", authtoken);
-       this.router.navigate(['/cart']);
+      // this.router.navigate(['/cart']);
+      window.location.reload(); 
       }else{
         this.serverAuth = false;
         this.serverCallDone = true;

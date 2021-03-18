@@ -30,6 +30,7 @@ export class CartComponent implements OnInit {
 
   constructor(private auth:AuthService, private appolloProvider:Apollo,private router:Router) {
     this.apollo = this.appolloProvider.use("loggedInUser")
+    console.log("APPOLO",this.apollo);
    }
 
   ngOnInit(): void {
@@ -105,7 +106,7 @@ export class CartComponent implements OnInit {
         }).valueChanges.subscribe((result:any) => {
         if(!result.data || (result.data &&  result.data.errorCode == 403)){
           this.router.navigate(['/auth'])
-        }else if(result.data){
+        }else if(result.data && !result.data.errorCode){
           console.log("Order",result)
           //alert("")
           this.orderCreated = true;
