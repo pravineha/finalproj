@@ -88,8 +88,8 @@ export class CartListComponent implements OnInit {
    //  // console.log("id",prodId);
        console.log("NAME",this.createdFor);
     if(this.quantity >0){
-      const {id,name,img}  = this.product;
-      let cartObject = {id,img,name,quantity:this.quantity};
+      const {id,name,img,price}  = this.product;
+      let cartObject = {id,img,price,name,quantity:this.quantity};
       cartObject["measurements"] = this.selectedMeasures;
       // console.log("Measurement Index",cartObject);
       let cartItem = localStorage.getItem("cart")? JSON.parse(localStorage.getItem("cart")):null;
@@ -101,6 +101,7 @@ export class CartListComponent implements OnInit {
        });
        if(cartexisitng  >= 0){
         cartItem[cartexisitng].quantity = this.quantity;
+        cartItem[cartexisitng].price = cartObject["price"]; //adding price
         cartItem[cartexisitng].measurements = cartObject["measurements"];
         cartItem[cartexisitng].createdFor= this.createdFor;
         cartItem[cartexisitng].address = this.address;

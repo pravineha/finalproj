@@ -82,6 +82,7 @@ export class ProductListComponent implements OnInit {
           createdDate,
           sectionId,
           img,
+          price,
           measurements{
             name,
             sizename,

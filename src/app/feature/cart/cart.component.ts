@@ -59,6 +59,7 @@ export class CartComponent implements OnInit {
               productId:product.id,
               measurements:[...product.measurements],
               quantity:product.quantity,
+              price:product.price,     //price
               createdFor:product.createdFor,
               address:product.address
             }
@@ -75,7 +76,8 @@ export class CartComponent implements OnInit {
         })
         formedQueryList += `{ 
           productId:"${product.productId}",
-          quantity:${product.quantity}
+          quantity:${product.quantity},
+          price:${product.price},
           createdFor:"${product.createdFor}",
           measurements:[${measurementString}]
           address:"${product.address}"

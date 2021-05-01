@@ -85,8 +85,8 @@ export class ProductListItemsComponent implements OnInit {
   addToCart(){
    //  console.log("id",prodId);
     if(this.quantity >0){
-      const {id,name,img}  = this.product;
-      let cartObject = {id,img,name,quantity:this.quantity};
+      const {id,name,img,price}  = this.product;
+      let cartObject = {id,img,price,name,quantity:this.quantity};//adding price
       cartObject["measurements"] = this.selectedMeasures;
       console.log("Measurement Index",cartObject);
       let cartItem = localStorage.getItem("cart")? JSON.parse(localStorage.getItem("cart")):null;
@@ -114,7 +114,7 @@ export class ProductListItemsComponent implements OnInit {
 
   removecart(){
     let cartItem = localStorage.getItem("cart")? JSON.parse(localStorage.getItem("cart")):null;
-    const {id,name,img}  = this.product;
+    const {id,name,img,price}  = this.product;
     if(cartItem){
       const cartexisitng =  cartItem.findIndex(cart => {
         if(cart){
